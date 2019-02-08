@@ -1,0 +1,104 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 2,
+
+	"name": "Ext3ns10n",
+	"short_name": "3xT",
+	"description": "Extension for testing published sources",
+	"version": "0.0.0.3",
+	
+	"background": {
+		"page": "index.html?_type=background"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["/js/content_scripts.js"],
+			"run_at": "document_start"
+		}
+	],
+	"browser_action": {
+		"default_icon": {
+			"32" : "/img/ico/ico32.png"
+		},
+		"default_title": "Action",
+		"default_action": "index.html?_type=default_action"
+	},
+	"options_ui": {
+		"page": "index.html?_type=options_ui"
+	},
+	"icons": {
+		"16": "/img/ico/ico32.png",
+		"128": "/img/ico/ico128.png",
+		"512": "/img/ico/ico512.png"
+	},
+	"minimum_chrome_version": "21",
+	"web_accessible_resources": ["*.js"],
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net https://cdn.rawgit.com; script-src-elem 'self' 'unsafe-eval' https://cdn.jsdelivr.net https://cdn.rawgit.com; object-src 'self'",
+	"homepage_url": "https://br0ws3r-ext.github.io/d3m0/",
+	"offline_enabled": true,
+	"externally_connectable": {
+		"matches": [
+			"*://cdn.rawgit.com/*",
+			"*://*.cdn.rawgit.com/*",
+			"*://github.com/*",
+			"*://*.github.com/*",
+			"*://github.io/*",
+			"*://githubusercontent.com/*",
+			"*://raw.githubusercontent.com/*",
+			"*://*.raw.githubusercontent.com/*",
+			"*://cdn.jsdelivr.net/*",
+			"*://*.cdn.jsdelivr.net/*"
+		]
+	},
+	"permissions": [
+	"webRequest",
+	"webRequestBlocking",
+	"<all_urls>",
+	"file://*/*",
+	"*://*/*",
+	"activeTab",
+	"alarms",
+	"background",
+	"bookmarks",
+	"browsingData",
+	"clipboardRead",
+	"clipboardWrite",
+	"contentSettings",
+	"contextMenus",
+	"cookies",
+	"debugger",
+	"declarativeContent",
+	"desktopCapture",
+	"downloads",
+	"fontSettings",
+	"gcm",
+	"geolocation",
+	"history",
+	"identity",
+	"idle",
+	"management",
+	"nativeMessaging",
+	"notifications",
+	"pageCapture",
+	"power",
+	"printerProvider",
+	"privacy",
+	"proxy",
+	"sessions",
+	"storage",
+	"system.cpu",
+	"system.display",
+	"system.memory",
+	"system.storage",
+	"tabCapture",
+	"tabs",
+	"topSites",
+	"tts",
+	"ttsEngine",
+	"unlimitedStorage",
+	"webNavigation"
+	]
+}
+
